@@ -1,9 +1,4 @@
 ﻿using CleanArchMvc.Domain.Validation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CleanArchMvc.Domain.Entities
 {
@@ -37,22 +32,22 @@ namespace CleanArchMvc.Domain.Entities
 
         private void ValidateDomain(string name, string description, decimal price, int stock, string image)
         {
-            DomainExceptionValidation.When(string.IsNullOrEmpty(name), 
+            DomainExceptionValidation.When(string.IsNullOrEmpty(name),
                 "Invalid name. Name is required.");
 
-            DomainExceptionValidation.When(name.Length < 3, 
+            DomainExceptionValidation.When(name.Length < 3,
                 "Invalid name. Name must be longer than 3 characters.");
 
-            DomainExceptionValidation.When(string.IsNullOrEmpty(description), 
+            DomainExceptionValidation.When(string.IsNullOrEmpty(description),
                 "Invalid description. Name is required.");
 
-            DomainExceptionValidation.When(description.Length < 5, 
+            DomainExceptionValidation.When(description.Length < 5,
                 "Invalid description. Description must be longer than 5 characters.");
 
-            DomainExceptionValidation.When(price < 0, 
+            DomainExceptionValidation.When(price < 0,
                 "Invalid price value.");
 
-            DomainExceptionValidation.When(stock < 0, 
+            DomainExceptionValidation.When(stock < 0,
                 "Invalid stock value.");
 
             DomainExceptionValidation.When(image?.Length > 250,
@@ -65,7 +60,7 @@ namespace CleanArchMvc.Domain.Entities
             Image = image;
         }
 
-        public int CategoryId { get;  set; }
-        public Category Category { get;  set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
     }
 }
