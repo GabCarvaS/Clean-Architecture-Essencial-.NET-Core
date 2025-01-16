@@ -6,7 +6,7 @@ using CleanArchMvc.Domain.Interfaces;
 
 namespace CleanArchMvc.Application.Services
 {
-    internal class ProductService : IProductService
+    public class ProductService : IProductService
     {
         private IProductRepository _productRepository;
         private readonly IMapper _mapper;
